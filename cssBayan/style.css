@@ -10,12 +10,11 @@ body {
   font-family: "Helvetica", "Verdana", sans-serif;
 }
 
-
 .container {
   margin: 2rem auto;
 }
 
-@media (max-width: 819px) {
+@media (max-width: 800px) {
   h1 {
     font-size: 1.5rem;
   }
@@ -29,11 +28,11 @@ body {
   }
 
   .container {
-    width: 100%;
+    width: 90%;
   }
 }
 
-@media (min-width: 820px) and (max-width: 1919px) {
+@media (min-width: 800px) and (max-width: 1900px) {
   h1 {
     font-size: 2rem;
   }
@@ -51,7 +50,7 @@ body {
   }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1901px) {
   h1 {
     font-size: 2.5rem;
   }
@@ -70,20 +69,10 @@ body {
 }
 
 .accordion-container {
-  border-bottom: 0.1rem solid #808080;
-}
-
-.container:hover .accordion-header .accordion-plus {
-  display: block;
+  border-bottom: 0.15rem solid #808080;
 }
 
 .accordion-plus {
-  display: none;
-  transition: transform 0.5s;
-}
-
-.accordion-container:hover .accordion-checkbox:not(:checked) + .accordion-label .accordion-header .accordion-plus {
-  transform: rotate(45deg);
   transition: transform 0.5s;
 }
 
@@ -99,22 +88,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-}
-
-.accordion-container:hover .accordion-header {
-  color: #4080ff;
 }
 
 .accordion-content {
   display: flex;
-  cursor: pointer;
   align-items: start;
   justify-content: center;
 }
 
 .accordion-meme {
-  overflow: hidden;
   border-radius: 1rem;
   width: 0;
   height: 0;
@@ -123,12 +105,48 @@ body {
   transition-timing-function: ease-in;
 }
 
-.accordion-header:hover + .accordion-content .accordion-meme,
-.accordion-content:hover .accordion-meme,
 .accordion-checkbox:checked + .accordion-label .accordion-content .accordion-meme {
   width: 20rem;
-  max-width: 80%;
-  height: auto;
+  height: 20rem;
   margin-bottom: 2rem;
   transition: width 0.5s, height 0.5s, padding 0.5s;
+}
+
+.accordion-checkbox:checked + .accordion-label .accordion-header {
+  color: #4080ff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .accordion-content {
+    cursor: pointer;
+  }
+
+  .accordion-header {
+    cursor: pointer;
+  }
+
+  .accordion-plus {
+    display: none;
+  }
+
+  .accordion-header:hover + .accordion-content .accordion-meme,
+  .accordion-content:hover .accordion-meme {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    transition: width 0.5s, height 0.5s, padding 0.5s;
+  }
+
+  .accordion-container:hover .accordion-header {
+    color: #4080ff;
+  }
+
+  .accordion-container:hover .accordion-checkbox:not(:checked) + .accordion-label .accordion-header .accordion-plus {
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+  }
+
+  .container:hover .accordion-header .accordion-plus {
+    display: block;
+  }
 }
