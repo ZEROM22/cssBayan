@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", "Verdana", sans-serif;
+}
+
+.container {
+  margin: 2rem auto;
+}
+
+@media (max-width: 788px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 789px) and (max-width: 1888px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1889px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    width: 40%;
+  }
+}
+
+.accordion-container {
+  border-bottom: 0.15rem solid #808080;
+}
+
+.accordion-plus {
+  transition: transform 0.5s;
+}
+
+.accordion-checkbox:checked + .accordion-label .accordion-header .accordion-plus {
+  transform: rotate(45deg);
+}
+
+.accordion-checkbox {
+  display: none;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-content {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.accordion-meme {
+  border-radius: 1rem;
+  width: 0;
+  height: 0;
+  margin-bottom: 0;
+  transition: width 0.5s, height 0.5s, margin-bottom 0.5s;
+  transition-timing-function: ease-in;
+}
+
+.accordion-checkbox:checked + .accordion-label .accordion-content .accordion-meme {
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 2rem;
+  transition: width 0.5s, height 0.5s, padding 0.5s;
+}
+
+.accordion-checkbox:checked + .accordion-label .accordion-header {
+  color: #4080ff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .accordion-content {
+    cursor: pointer;
+  }
+
+  .accordion-header {
+    cursor: pointer;
+  }
+
+  .accordion-plus {
+    display: none;
+  }
+
+  .accordion-header:hover + .accordion-content .accordion-meme,
+  .accordion-content:hover .accordion-meme {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    transition: width 0.5s, height 0.5s, padding 0.5s;
+  }
+
+  .accordion-container:hover .accordion-header {
+    color: #4080ff;
+  }
+
+  .accordion-container:hover .accordion-checkbox:not(:checked) + .accordion-label .accordion-header .accordion-plus {
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+  }
+
+  .container:hover .accordion-header .accordion-plus {
+    display: block;
+  }
+}
