@@ -14,7 +14,7 @@ body {
   margin: 2rem auto;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 788px) {
   h1 {
     font-size: 1.5rem;
   }
@@ -32,7 +32,7 @@ body {
   }
 }
 
-@media (min-width: 800px) and (max-width: 1900px) {
+@media (min-width: 789px) and (max-width: 1888px) {
   h1 {
     font-size: 2rem;
   }
@@ -50,7 +50,7 @@ body {
   }
 }
 
-@media (min-width: 1901px) {
+@media (min-width: 1889px) {
   h1 {
     font-size: 2.5rem;
   }
